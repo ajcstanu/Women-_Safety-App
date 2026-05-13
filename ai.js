@@ -160,7 +160,6 @@ module.exports = (store) => {
         'Audio levels normal. No threat detected.',
     };
   }
-
   function analyzeMovementPatterns({ accelerometerData, locationHistory }) {
     // Detect erratic movement patterns
     if (!accelerometerData.length && !locationHistory.length) {
@@ -237,7 +236,6 @@ module.exports = (store) => {
       },
     ].sort((a, b) => b.safetyScore - a.safetyScore);
   }
-
   function calculateRiskScore({ lat, lng, isNight }) {
     // Simplified risk calculation
     const baseRisk = 30;
@@ -263,6 +261,5 @@ module.exports = (store) => {
     recs.push('SHIELD is monitoring. Press SOS if you feel unsafe.');
     return recs;
   }
-
   return router;
 };
